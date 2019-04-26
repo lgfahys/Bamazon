@@ -72,10 +72,10 @@ function chooseProduct() {
                         console.log(res.affectedRows + " products updated!\n");
                     }
                 );
-                console.log(query.sql);
                 console.log("You have purchased " + choice.itemQuantity + " of the product " + res[itemIndex].product_name);
+                console.log(query.sql);
             } else {
-                console.log("\n" + "\033[38;5;1m" + "Insufficient Quantity! We only have " + "\033[0m" + currentStock + "\033[38;5;1m" + " of these items left" + "\033[0m");
+                console.log("\n" + "\033[38;5;1m" + "Insufficient Quantity! We have " + "\033[0m" + currentStock + "\033[38;5;1m" + " of the product " + "\033[0m" + res[itemIndex].product_name + "\033[38;5;1m" + " left" + "\033[0m");
             }
             // var itemIndex = products.indexOf(choice.itemChoice);
             // console.log(res[itemIndex].stock - choice.itemQuantity);
