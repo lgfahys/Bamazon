@@ -55,13 +55,18 @@ function chooseProduct() {
             var itemId = itemIndex + 1;
             var currentStock = res[itemIndex].stock;
             var updatedStock = parseInt(currentStock) - parseInt(choice.itemQuantity);
+            var itemPrice = res[itemIndex].price;
+            var currentSales = res[itemIndex].product_sales;
+            var totalPrice = parseFloat(choice.itemQuantity) * parseFloat(itemPrice);
+            var totalProductSales = totalPrice + parseFloat(currentSales);
             if (updatedStock >= 0) {
                 console.log("\n" + "\033[38;5;1m" + "Searching all product quantities..." + "\033[0m" + "\n");
                 var query = connection.query(
                     "UPDATE products SET ? WHERE ?",
                     [
                         {
-                            stock: updatedStock
+                            stock: updatedStock,
+                            product_sales: totalProductSales
                         },
                         {
                             item_id: itemId
@@ -70,6 +75,10 @@ function chooseProduct() {
                     function (err, res) {
                         if (err) throw err;
                         console.log(res.affectedRows + " products updated!\n");
+                        // console.log(choice.itemQuantity);
+                        // console.log(itemPrice);
+                        // console.log(currentSales);
+                        // console.log(totalProductSales);
                     }
                 );
                 console.log("You have purchased " + choice.itemQuantity + " of the product " + res[itemIndex].product_name);
