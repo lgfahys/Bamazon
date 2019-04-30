@@ -54,7 +54,7 @@ function chooseProduct() {
             var itemIndex = products.indexOf(choice.itemChoice);
             var itemId = itemIndex + 1;
             var currentStock = res[itemIndex].stock;
-            var updatedStock = currentStock - choice.itemQuantity;
+            var updatedStock = parseInt(currentStock) - parseInt(choice.itemQuantity);
             if (updatedStock >= 0) {
                 console.log("\n" + "\033[38;5;1m" + "Searching all product quantities..." + "\033[0m" + "\n");
                 var query = connection.query(
