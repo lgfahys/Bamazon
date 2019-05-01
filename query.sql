@@ -31,3 +31,5 @@ CREATE TABLE departments (
   over_head_costs DECIMAL(10,2),
   PRIMARY KEY (department_id)
 );
+
+UPDATE products SET department_id = 6 WHERE department_name = 'Beauty';
