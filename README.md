@@ -1,6 +1,6 @@
 # Bamazon
 
-### :video_camera: See Bamazon in action :video_camera: ###
+### :video_camera: [See Bamazon in action](https://drive.google.com/file/d/1slOxCZArIj65m9sbyDqFKAB7S928GXUH/view?usp=sharing) :video_camera: ###
 ## Description
 Bamazon is an Amazon-like storefront CLI application using MySQL and Node.js. Bamazon can be run by a customer, manager or supervisor to accomplish needed tasks.
 
