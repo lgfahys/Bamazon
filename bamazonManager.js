@@ -167,7 +167,7 @@ function addProduct() {
         {
             type: "prompt",
             name: "itemPrice",
-            message: "What quantity is the price of this product?",
+            message: "What is the price of this product?",
         },
 
         {
